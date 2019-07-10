@@ -7,6 +7,7 @@ metadata:
   labels:
     name: flux
   name: flux
+  namespace: flux
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
@@ -14,6 +15,7 @@ metadata:
   labels:
     name: flux
   name: flux
+  namespace: flux
 rules:
   - apiGroups: ['*']
     resources: ['*']
@@ -27,6 +29,7 @@ metadata:
   labels:
     name: flux
   name: flux
+  namespace: flux
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -34,4 +37,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: flux
-    namespace: default
+    namespace: flux
